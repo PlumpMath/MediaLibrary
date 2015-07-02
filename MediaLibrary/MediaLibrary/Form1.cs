@@ -12,11 +12,10 @@ namespace MediaLibrary
 {
     public partial class Form1 : Form
     {
+        AXVLC.VLCPlugin alxplugin1 = new AXVLC.VLCPlugin();
         public Form1()
         {
             InitializeComponent();
-
-
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -33,10 +32,23 @@ namespace MediaLibrary
             {
                 string fileToPlay = ofd.FileName;
                 txtSekectedFile.Text = fileToPlay;
-                AXVLC.VLCPlugin alxplugin1 = new AXVLC.VLCPlugin();
                 alxplugin1.addTarget("file:///" + fileToPlay, null, AXVLC.VLCPlaylistMode.VLCPlayListInsert, 0);
-                alxplugin1.play();
             }
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            alxplugin1.stop();
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            alxplugin1.pause();
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            alxplugin1.play();
         }
     }
 }
