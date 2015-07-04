@@ -41,7 +41,7 @@ namespace MediaLibrary
 
         }
 
-        public void addVersionTable()
+        public void createVersionTable()
         {
             string sql = "CREATE TABLE Version (number INT32)";
             openConnection();
@@ -89,6 +89,24 @@ namespace MediaLibrary
             // if we get here there was no data to be read, so something was really wrong on create
             closeConnection();
             return -1;
+        }
+
+        public void createVideosTable()
+        {
+            string sql = "CREATE TABLE Videos (filename VARCHAR(40), path VARCHAR(256), lastPosition INT32)";
+            openConnection();
+            SQLiteCommand command = new SQLiteCommand(sql, filesLibraryConnection);
+            command.ExecuteNonQuery();
+            closeConnection();
+        }
+
+        public void createMusicTable()
+        {
+            string sql = "CREATE TABLE Music (filename VARCHAR(40), path VARCHAR(256), lastPosition INT32)";
+            openConnection();
+            SQLiteCommand command = new SQLiteCommand(sql, filesLibraryConnection);
+            command.ExecuteNonQuery();
+            closeConnection();
         }
 
         private void openConnection()

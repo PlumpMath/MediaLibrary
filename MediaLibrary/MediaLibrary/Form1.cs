@@ -32,8 +32,18 @@ namespace MediaLibrary
                     Application.Exit();
             }
             else {
-                dbConnection.addVersionTable();
+                dbConnection.createVersionTable();
                 dbConnection.setTableVersion(DBVersion);
+            }
+
+            if (!dbConnection.checkTableExists("Videos"))
+            {
+                dbConnection.createVideosTable();
+            }
+
+            if (!dbConnection.checkTableExists("Music"))
+            {
+                dbConnection.createMusicTable();
             }
         }
 
