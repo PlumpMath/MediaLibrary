@@ -17,36 +17,23 @@ namespace MediaLibrary
         SQLiteConnection filesLibraryConnection;
         const string DBName = "LibraryFiles.sqlite";
         const int DBVersion = 1;
+        SQLQuery dbConnection;
         public Form1()
         {
             InitializeComponent();
+            dbConnection = new SQLQuery(DBName);
             if (!System.IO.File.Exists(DBName))
             {
-                SQLiteConnection.CreateFile(DBName);
+                dbConnection.createDB();
             }
-            filesLibraryConnection = new SQLiteConnection("Data Source="+ DBName + ";Version=3;");
-            filesLibraryConnection.Open();
-            string commandString = "SELECT name FROM sqlite_master WHERE type=\'table\' AND name=\'Version\'";
-            SQLiteCommand command = new SQLiteCommand(commandString, filesLibraryConnection);
-            SQLiteDataReader reader = command.ExecuteReader();
-            if(reader.HasRows) {
-                commandString = "SELECT number FROM Version order by number desc";
-                command = new SQLiteCommand(commandString, filesLibraryConnection);
-                reader = command.ExecuteReader();
-                while(reader.Read())
-                    if (!(reader.GetInt32(0) == DBVersion))
-                    {
-                        Application.Exit();
-                        // TODO Implement Upgrader
-                    }
+            if(dbConnection.checkTableExists("Version")) {
+                if (dbConnection.getDBVersion() != DBVersion)
+                    //TODO implement upgrader
+                    Application.Exit();
             }
             else {
-                commandString = "CREATE TABLE Version (number INT32)";
-                command = new SQLiteCommand(commandString, filesLibraryConnection);
-                command.ExecuteNonQuery();
-                commandString = "insert into Version (number) values (" + DBVersion + ")";
-                command = new SQLiteCommand(commandString, filesLibraryConnection);
-                command.ExecuteNonQuery();
+                dbConnection.addVersionTable();
+                dbConnection.setTableVersion(DBVersion);
             }
         }
 
