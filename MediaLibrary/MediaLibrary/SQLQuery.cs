@@ -93,7 +93,7 @@ namespace MediaLibrary
 
         public void createVideosTable()
         {
-            string sql = "CREATE TABLE Videos (filename VARCHAR(40), path VARCHAR(256), lastPosition INT32)";
+            string sql = "CREATE TABLE Videos (filename VARCHAR(40), path VARCHAR(256), lastPosition INT32, isNetwork BOOLEAN)";
             openConnection();
             SQLiteCommand command = new SQLiteCommand(sql, filesLibraryConnection);
             command.ExecuteNonQuery();
@@ -102,10 +102,28 @@ namespace MediaLibrary
 
         public void createMusicTable()
         {
-            string sql = "CREATE TABLE Music (filename VARCHAR(40), path VARCHAR(256), lastPosition INT32)";
+            string sql = "CREATE TABLE Music (filename VARCHAR(40), path VARCHAR(256), lastPosition INT32, isNetwork BOOLEAN)";
             openConnection();
             SQLiteCommand command = new SQLiteCommand(sql, filesLibraryConnection);
             command.ExecuteNonQuery();
+            closeConnection();
+        }
+
+        public void addNonNetworkVideos(string[] paths)
+        {
+            string sql = "INSERT INTO \'Videos\' (filename, path, lastPosition, isNetwork) VALUES (@name, @filepath, @position, @network)";
+            openConnection();
+            SQLiteTransaction transaction = filesLibraryConnection.BeginTransaction();
+            foreach (string path in paths) {
+                SQLiteCommand command = new SQLiteCommand(sql, filesLibraryConnection);
+                //TODO: Find a way to get filename from the path
+                command.Parameters.AddWithValue("@name", "name");
+                command.Parameters.AddWithValue("@filepath",path);
+                command.Parameters.AddWithValue("@position", 0);
+                command.Parameters.AddWithValue("@network", 0);
+                command.ExecuteNonQuery();
+            }
+            transaction.Commit();
             closeConnection();
         }
 

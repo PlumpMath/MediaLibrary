@@ -50,13 +50,17 @@ namespace MediaLibrary
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Video Files (*.mp4, *.avi)|*.mp4;*.avi";
+            ofd.Filter = "Video Files (*.mp4, *.avi, *.mkv)|*.mp4;*.avi;*.mkv";
+            ofd.Multiselect = true;
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                string fileToPlay = ofd.FileName;
-                txtSekectedFile.Text = fileToPlay;
-                alxplugin1.addTarget("file:///" + fileToPlay, null, AXVLC.VLCPlaylistMode.VLCPlayListInsert, 0);
+                string[] filesToAdd = ofd.FileNames;
+                foreach (string file in filesToAdd) 
+                {
+                    alxplugin1.addTarget("file:///" + file, null, AXVLC.VLCPlaylistMode.VLCPlayListInsert, 0);
+                }
+                dbConnection.addNonNetworkVideos(filesToAdd);
             }
         }
 
