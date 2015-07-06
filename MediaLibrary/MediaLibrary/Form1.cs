@@ -78,5 +78,13 @@ namespace MediaLibrary
         {
             alxplugin1.play();
         }
+
+        private void btnAddNetwork_Click(object sender, EventArgs e)
+        {
+            string name = "name"; //temporary, need to figure out a nice UI way of getting a name of network video
+            string path = txtSelectedFile.Text;
+            dbConnection.addNetworkVideo(path, name);
+            alxplugin1.addTarget(path, null, AXVLC.VLCPlaylistMode.VLCPlayListInsert, 0);
+        }
     }
 }

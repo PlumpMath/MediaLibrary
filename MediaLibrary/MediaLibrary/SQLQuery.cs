@@ -127,6 +127,19 @@ namespace MediaLibrary
             closeConnection();
         }
 
+        public void addNetworkVideo(string path, string name)
+        {
+            string sql = "INSERT INTO \'Videos\' (filename, path, lastPosition, isNetwork) VALUES (@name, @filepath, @position, @network)";
+            openConnection();
+            SQLiteCommand command = new SQLiteCommand(sql, filesLibraryConnection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@filepath", path);
+            command.Parameters.AddWithValue("@position", 0);
+            command.Parameters.AddWithValue("@network", 1);
+            command.ExecuteNonQuery();
+            closeConnection();
+        }
+
         private void openConnection()
         {
             filesLibraryConnection.Open();

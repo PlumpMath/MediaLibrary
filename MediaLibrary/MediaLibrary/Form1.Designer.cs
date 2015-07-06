@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.btnSelectFile = new System.Windows.Forms.Button();
-            this.txtSekectedFile = new System.Windows.Forms.TextBox();
+            this.txtSelectedFile = new System.Windows.Forms.TextBox();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
+            this.btnAddNetwork = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSelectFile
@@ -45,16 +46,16 @@
             this.btnSelectFile.UseVisualStyleBackColor = true;
             this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
-            // txtSekectedFile
+            // txtSelectedFile
             // 
-            this.txtSekectedFile.Location = new System.Drawing.Point(107, 35);
-            this.txtSekectedFile.Name = "txtSekectedFile";
-            this.txtSekectedFile.Size = new System.Drawing.Size(494, 20);
-            this.txtSekectedFile.TabIndex = 1;
+            this.txtSelectedFile.Location = new System.Drawing.Point(12, 82);
+            this.txtSelectedFile.Name = "txtSelectedFile";
+            this.txtSelectedFile.Size = new System.Drawing.Size(478, 20);
+            this.txtSelectedFile.TabIndex = 1;
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(13, 86);
+            this.btnPlay.Location = new System.Drawing.Point(12, 129);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(75, 23);
             this.btnPlay.TabIndex = 2;
@@ -64,7 +65,7 @@
             // 
             // btnPause
             // 
-            this.btnPause.Location = new System.Drawing.Point(168, 86);
+            this.btnPause.Location = new System.Drawing.Point(138, 129);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(75, 23);
             this.btnPause.TabIndex = 3;
@@ -74,7 +75,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(325, 86);
+            this.btnStop.Location = new System.Drawing.Point(251, 129);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 4;
@@ -82,15 +83,26 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
+            // btnAddNetwork
+            // 
+            this.btnAddNetwork.Location = new System.Drawing.Point(496, 78);
+            this.btnAddNetwork.Name = "btnAddNetwork";
+            this.btnAddNetwork.Size = new System.Drawing.Size(102, 23);
+            this.btnAddNetwork.TabIndex = 5;
+            this.btnAddNetwork.Text = "Add Network URL";
+            this.btnAddNetwork.UseVisualStyleBackColor = true;
+            this.btnAddNetwork.Click += new System.EventHandler(this.btnAddNetwork_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 121);
+            this.ClientSize = new System.Drawing.Size(613, 164);
+            this.Controls.Add(this.btnAddNetwork);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.btnPlay);
-            this.Controls.Add(this.txtSekectedFile);
+            this.Controls.Add(this.txtSelectedFile);
             this.Controls.Add(this.btnSelectFile);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -102,10 +114,11 @@
         #endregion
 
         private System.Windows.Forms.Button btnSelectFile;
-        private System.Windows.Forms.TextBox txtSekectedFile;
+        private System.Windows.Forms.TextBox txtSelectedFile;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnAddNetwork;
     }
 }
 
