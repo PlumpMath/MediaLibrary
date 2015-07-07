@@ -140,6 +140,22 @@ namespace MediaLibrary
             closeConnection();
         }
 
+        public List<MediaFile> getAllVideos()
+        {
+            string sql = "SELECT * FROM \'Videos\'";
+            List<MediaFile> ret = new List<MediaFile>();
+            openConnection();
+            SQLiteCommand command = new SQLiteCommand(sql, filesLibraryConnection);
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                MediaFile file = new MediaFile(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), reader.GetBoolean(3));
+                ret.Add(file);
+            }
+            closeConnection();
+            return ret;
+        }
+
         private void openConnection()
         {
             filesLibraryConnection.Open();
