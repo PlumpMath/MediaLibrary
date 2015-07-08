@@ -12,13 +12,15 @@ namespace MediaLibrary
         string path { get; set; }
         int lastPosition { get; set; }
         bool netWork { get; set; }
+        bool video { get; set; }
 
-        public MediaFile(string name, string filepath, int pos, bool isNetwork)
+        public MediaFile(string name, string filepath, int pos, bool isNetwork, bool isVideo)
         {
             fileName = name;
             path = filepath;
             lastPosition = pos;
             netWork = isNetwork;
+            video = isVideo;
         }
     }
 }

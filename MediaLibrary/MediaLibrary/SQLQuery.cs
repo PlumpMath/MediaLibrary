@@ -149,7 +149,23 @@ namespace MediaLibrary
             SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                MediaFile file = new MediaFile(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), reader.GetBoolean(3));
+                MediaFile file = new MediaFile(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), reader.GetBoolean(3), true);
+                ret.Add(file);
+            }
+            closeConnection();
+            return ret;
+        }
+
+        public List<MediaFile> getAllMusic()
+        {
+            string sql = "SELECT * FROM \'Music\'";
+            List<MediaFile> ret = new List<MediaFile>();
+            openConnection();
+            SQLiteCommand command = new SQLiteCommand(sql, filesLibraryConnection);
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                MediaFile file = new MediaFile(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), reader.GetBoolean(3), false);
                 ret.Add(file);
             }
             closeConnection();

@@ -46,6 +46,7 @@ namespace MediaLibrary
                 dbConnection.createMusicTable();
             }
             dbConnection.getAllVideos();
+            dbConnection.getAllMusic();
         }
 
         private void btnSelectFile_Click(object sender, EventArgs e)

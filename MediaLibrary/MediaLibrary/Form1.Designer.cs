@@ -42,7 +42,7 @@
             this.btnSelectFile.Name = "btnSelectFile";
             this.btnSelectFile.Size = new System.Drawing.Size(75, 23);
             this.btnSelectFile.TabIndex = 0;
-            this.btnSelectFile.Text = "Select File";
+            this.btnSelectFile.Text = "Select Files";
             this.btnSelectFile.UseVisualStyleBackColor = true;
             this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
