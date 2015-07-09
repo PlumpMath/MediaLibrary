@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnSelectFile = new System.Windows.Forms.Button();
             this.txtSelectedFile = new System.Windows.Forms.TextBox();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnAddNetwork = new System.Windows.Forms.Button();
+            this.axVLCPlugin21 = new AxAXVLC.AxVLCPlugin2();
+            ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin21)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSelectFile
@@ -93,11 +96,21 @@
             this.btnAddNetwork.UseVisualStyleBackColor = true;
             this.btnAddNetwork.Click += new System.EventHandler(this.btnAddNetwork_Click);
             // 
+            // axVLCPlugin21
+            // 
+            this.axVLCPlugin21.Enabled = true;
+            this.axVLCPlugin21.Location = new System.Drawing.Point(419, 129);
+            this.axVLCPlugin21.Name = "axVLCPlugin21";
+            this.axVLCPlugin21.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVLCPlugin21.OcxState")));
+            this.axVLCPlugin21.Size = new System.Drawing.Size(320, 240);
+            this.axVLCPlugin21.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 164);
+            this.ClientSize = new System.Drawing.Size(798, 382);
+            this.Controls.Add(this.axVLCPlugin21);
             this.Controls.Add(this.btnAddNetwork);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPause);
@@ -106,6 +119,7 @@
             this.Controls.Add(this.btnSelectFile);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin21)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +133,7 @@
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnAddNetwork;
+        private AxAXVLC.AxVLCPlugin2 axVLCPlugin21;
     }
 }
 
