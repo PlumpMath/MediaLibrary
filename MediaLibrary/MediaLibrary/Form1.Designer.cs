@@ -31,17 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnSelectFile = new System.Windows.Forms.Button();
             this.txtSelectedFile = new System.Windows.Forms.TextBox();
-            this.btnPlay = new System.Windows.Forms.Button();
-            this.btnPause = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
             this.btnAddNetwork = new System.Windows.Forms.Button();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.axVLCPlugin21 = new AxAXVLC.AxVLCPlugin2();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.btnPlay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin21)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSelectFile
             // 
-            this.btnSelectFile.Location = new System.Drawing.Point(12, 32);
+            this.btnSelectFile.Location = new System.Drawing.Point(34, 29);
             this.btnSelectFile.Name = "btnSelectFile";
             this.btnSelectFile.Size = new System.Drawing.Size(75, 23);
             this.btnSelectFile.TabIndex = 0;
@@ -51,44 +52,14 @@
             // 
             // txtSelectedFile
             // 
-            this.txtSelectedFile.Location = new System.Drawing.Point(12, 82);
+            this.txtSelectedFile.Location = new System.Drawing.Point(144, 32);
             this.txtSelectedFile.Name = "txtSelectedFile";
-            this.txtSelectedFile.Size = new System.Drawing.Size(478, 20);
+            this.txtSelectedFile.Size = new System.Drawing.Size(500, 20);
             this.txtSelectedFile.TabIndex = 1;
-            // 
-            // btnPlay
-            // 
-            this.btnPlay.Location = new System.Drawing.Point(12, 129);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(75, 23);
-            this.btnPlay.TabIndex = 2;
-            this.btnPlay.Text = "Play";
-            this.btnPlay.UseVisualStyleBackColor = true;
-            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // btnPause
-            // 
-            this.btnPause.Location = new System.Drawing.Point(138, 129);
-            this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(75, 23);
-            this.btnPause.TabIndex = 3;
-            this.btnPause.Text = "Pause";
-            this.btnPause.UseVisualStyleBackColor = true;
-            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
-            // 
-            // btnStop
-            // 
-            this.btnStop.Location = new System.Drawing.Point(251, 129);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(75, 23);
-            this.btnStop.TabIndex = 4;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnAddNetwork
             // 
-            this.btnAddNetwork.Location = new System.Drawing.Point(496, 78);
+            this.btnAddNetwork.Location = new System.Drawing.Point(670, 32);
             this.btnAddNetwork.Name = "btnAddNetwork";
             this.btnAddNetwork.Size = new System.Drawing.Size(102, 23);
             this.btnAddNetwork.TabIndex = 5;
@@ -96,28 +67,65 @@
             this.btnAddNetwork.UseVisualStyleBackColor = true;
             this.btnAddNetwork.Click += new System.EventHandler(this.btnAddNetwork_Click);
             // 
+            // elementHost1
+            // 
+            this.elementHost1.Location = new System.Drawing.Point(144, 61);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(500, 364);
+            this.elementHost1.TabIndex = 7;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = null;
+            // 
             // axVLCPlugin21
             // 
             this.axVLCPlugin21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.axVLCPlugin21.Enabled = true;
-            this.axVLCPlugin21.Location = new System.Drawing.Point(419, 129);
+            this.axVLCPlugin21.Location = new System.Drawing.Point(144, 61);
             this.axVLCPlugin21.Name = "axVLCPlugin21";
             this.axVLCPlugin21.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVLCPlugin21.OcxState")));
-            this.axVLCPlugin21.Size = new System.Drawing.Size(320, 240);
-            this.axVLCPlugin21.TabIndex = 6;
+            this.axVLCPlugin21.Size = new System.Drawing.Size(500, 326);
+            this.axVLCPlugin21.TabIndex = 8;
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(569, 402);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.TabIndex = 11;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            // 
+            // btnPause
+            // 
+            this.btnPause.Location = new System.Drawing.Point(357, 402);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(75, 23);
+            this.btnPause.TabIndex = 10;
+            this.btnPause.Text = "Pause";
+            this.btnPause.UseVisualStyleBackColor = true;
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.Location = new System.Drawing.Point(144, 402);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Size = new System.Drawing.Size(75, 23);
+            this.btnPlay.TabIndex = 9;
+            this.btnPlay.Text = "Play";
+            this.btnPlay.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 382);
-            this.Controls.Add(this.axVLCPlugin21);
-            this.Controls.Add(this.btnAddNetwork);
+            this.ClientSize = new System.Drawing.Size(781, 437);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.btnPlay);
+            this.Controls.Add(this.axVLCPlugin21);
+            this.Controls.Add(this.elementHost1);
+            this.Controls.Add(this.btnAddNetwork);
             this.Controls.Add(this.txtSelectedFile);
             this.Controls.Add(this.btnSelectFile);
             this.Name = "Form1";
@@ -132,11 +140,12 @@
 
         private System.Windows.Forms.Button btnSelectFile;
         private System.Windows.Forms.TextBox txtSelectedFile;
-        private System.Windows.Forms.Button btnPlay;
-        private System.Windows.Forms.Button btnPause;
-        private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnAddNetwork;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
         private AxAXVLC.AxVLCPlugin2 axVLCPlugin21;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.Button btnPlay;
     }
 }
 
