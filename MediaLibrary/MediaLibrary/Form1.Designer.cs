@@ -98,6 +98,9 @@
             // 
             // axVLCPlugin21
             // 
+            this.axVLCPlugin21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.axVLCPlugin21.Enabled = true;
             this.axVLCPlugin21.Location = new System.Drawing.Point(419, 129);
             this.axVLCPlugin21.Name = "axVLCPlugin21";

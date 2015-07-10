@@ -83,9 +83,11 @@ namespace MediaLibrary
         private void btnAddNetwork_Click(object sender, EventArgs e)
         {
             string name = "name"; //temporary, need to figure out a nice UI way of getting a name of network video
+            // switch to new VLC plugin that allows for embedding into form broke URL playing -- need to fix
             string path = txtSelectedFile.Text;
             dbConnection.addNetworkVideo(path, name);
             axVLCPlugin21.playlist.add(path);
+            axVLCPlugin21.playlist.play();
         }
     }
 }
