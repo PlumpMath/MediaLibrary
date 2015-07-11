@@ -65,20 +65,6 @@ namespace MediaLibrary
             }
         }
 
-        private void btnStop_Click(object sender, EventArgs e)
-        {
-            axVLCPlugin21.playlist.stop();
-        }
-
-        private void btnPause_Click(object sender, EventArgs e)
-        {
-            axVLCPlugin21.playlist.pause();
-        }
-
-        private void btnPlay_Click(object sender, EventArgs e)
-        {
-            axVLCPlugin21.playlist.play();
-        }
 
         private void btnAddNetwork_Click(object sender, EventArgs e)
         {
@@ -88,6 +74,21 @@ namespace MediaLibrary
             dbConnection.addNetworkVideo(path, name);
             axVLCPlugin21.playlist.add(path);
             axVLCPlugin21.playlist.play();
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            axVLCPlugin21.playlist.play();
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            axVLCPlugin21.playlist.stop();
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            axVLCPlugin21.playlist.pause();
         }
     }
 }

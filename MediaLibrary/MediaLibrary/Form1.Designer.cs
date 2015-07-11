@@ -85,7 +85,7 @@
             this.axVLCPlugin21.Location = new System.Drawing.Point(144, 61);
             this.axVLCPlugin21.Name = "axVLCPlugin21";
             this.axVLCPlugin21.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axVLCPlugin21.OcxState")));
-            this.axVLCPlugin21.Size = new System.Drawing.Size(500, 326);
+            this.axVLCPlugin21.Size = new System.Drawing.Size(499, 325);
             this.axVLCPlugin21.TabIndex = 8;
             // 
             // btnStop
@@ -96,6 +96,7 @@
             this.btnStop.TabIndex = 11;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnPause
             // 
@@ -105,6 +106,7 @@
             this.btnPause.TabIndex = 10;
             this.btnPause.Text = "Pause";
             this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
             // btnPlay
             // 
@@ -114,6 +116,7 @@
             this.btnPlay.TabIndex = 9;
             this.btnPlay.Text = "Play";
             this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // Form1
             // 
