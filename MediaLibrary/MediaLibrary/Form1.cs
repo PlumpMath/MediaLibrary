@@ -51,7 +51,7 @@ namespace MediaLibrary
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Video Files (*.mp4, *.avi, *.mkv)|*.mp4;*.avi;*.mkv";
+            ofd.Filter = "Media Files (*.mp4, *.avi, *.mkv, *.mp3, *.wav)|*.mp4;*.avi;*.mkv;*.mp3;*.wav";
             ofd.Multiselect = true;
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
