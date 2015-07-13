@@ -172,6 +172,24 @@ namespace MediaLibrary
             return ret;
         }
 
+        public void setVideoLastPosition(int seconds, string path)
+        {
+            string sql = "UPDATE videos SET lastPosition=" + seconds + "WHERE path=\'" + path + "\'";
+            openConnection();
+            SQLiteCommand command = new SQLiteCommand(sql, filesLibraryConnection);
+            command.ExecuteNonQuery();
+            closeConnection();
+        }
+
+        public void setMusicLastPosition(int seconds, string path)
+        {
+            string sql = "UPDATE Music SET lastPosition=" + seconds + "WHERE path=\'" + path + "\'";
+            openConnection();
+            SQLiteCommand command = new SQLiteCommand(sql, filesLibraryConnection);
+            command.ExecuteNonQuery();
+            closeConnection();
+        }
+
         private void openConnection()
         {
             filesLibraryConnection.Open();
